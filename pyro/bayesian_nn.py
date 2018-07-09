@@ -232,20 +232,3 @@ plt.plot(x, y_test)
 plt.plot(x, mean, linestyle = '--')
 plt.fill_between(x, y_test-std, y_test+std, alpha = 0.3, color = 'red')
 plt.show()
-
-
-#t = np.random.random([4,3])
-#v = np.random.random([4,])
-
-#tt = torch.tensor(t)
-#vv = torch.tensor(v)
-#print tt
-#torch.cat((tt, vv), 1)
-#ind = torch.randperm(4)
-#print ind
-#print ind.shape
-#print tt[ind]
-#X = tt[:, :-1]
-#Y = tt[:, -1]
-#print (X)
-#print (Y)
