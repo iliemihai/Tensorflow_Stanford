@@ -193,7 +193,8 @@ svi = SVI(model, guide, optim, loss=Trace_ELBO())
 
 N = len(X_train)
 
-for j in range(3000):
+
+for j in range(1500):
     epoch_loss = 0.0
     perm = torch.randperm(N)
     data = data[perm]
@@ -222,15 +223,16 @@ for i in range(100):
 
 preds = np.array(preds)
 mean = np.mean(preds, axis=0)
-std = np.std(preds, axis=0) / 10
+std = np.std(preds, axis=0) /10
 y_test = Y_test.data.numpy()
 x = np.arange(len(y_test))
 
 plt.figure()
 plt.plot(x, y_test)
 plt.plot(x, mean, linestyle = '--')
-plt.fill_between(x, mean-std, mean+std, alpha = 0.3, color = 'orange')
+plt.fill_between(x, y_test-std, y_test+std, alpha = 0.3, color = 'red')
 plt.show()
+
 
 #t = np.random.random([4,3])
 #v = np.random.random([4,])
